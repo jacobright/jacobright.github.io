@@ -157,7 +157,7 @@ function stage_2_continuous() {
 		stage2 = false;
 		sayAndPrintMsg("Approaching Earth");
 		toSec = new Date().getSeconds() + (59-new Date().getSeconds());
-		toMin = new Date().getMinutes() + 0;
+		toMin = new Date().getMinutes() + 2;
 
 		timeSinceStageLoaded = -1;
 	}
