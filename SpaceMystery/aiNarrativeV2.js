@@ -292,13 +292,13 @@ function questionChecker() {
 		speaker.stop;
 		speaker.cancel;
 	}
-	if (questionAsked == "1 2 4 8 16 32") {
+	else if (questionAsked == "1 2 4 8 16 32") {
 		stage1 = false;
 		stage2 = false;
 		stage3 = false;
 		stage5 = true;
 	}
-	if (words[0] == "what" || words[0] == "whats" || words[0] == "what's") {
+	else if (words[0] == "what" || words[0] == "whats" || words[0] == "what's") {
 		if (words[0] == "what" && words[1] == "time" && words[2] == "is") {
 			if (new Date().getMinutes() == 0)
 				sayAndPrintMsg("the time is: " + new Date().getHours() + " oh clock");
@@ -497,16 +497,20 @@ function questionChecker() {
 			}
 		}
 	}
-	else if (questionAsked == "override") {
-		overrideMode = true;
-		sayAndPrintMsg("Override access granted");
-	}
-	
-	if (stage1 == true && (questionAsked.includes("really") || questionAsked.includes("are you sure") || questionAsked.includes("why not") || questionAsked.includes("lie") || questionAsked.includes("lying") || questionAsked.includes("truth") || questionAsked.includes("true") || questionAsked.includes("shutdown") || questionAsked.includes("code") || questionAsked.includes("override"))) {
+	else if (stage1 == true && (questionAsked.includes("really") || questionAsked.includes("are you sure") || questionAsked.includes("why not") || questionAsked.includes("lie") || questionAsked.includes("lying") || questionAsked.includes("truth") || questionAsked.includes("true") || questionAsked.includes("shutdown") || questionAsked.includes("code") || questionAsked.includes("override"))) {
 		stage2 = true;
 		stage1 = false;
 		if (questionAsked != "override")
 			sayAndPrintMsg("I'm afraid I can't tell you that.");
+		
+		if (questionAsked == "override") {
+			overrideMode = true;
+			sayAndPrintMsg("Override access granted");
+		}
+	}
+	else
+	{
+		textVis.html("I don't understand.");
 	}
 	
 	if (stage1)
