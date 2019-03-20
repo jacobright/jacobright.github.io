@@ -406,6 +406,9 @@ function questionChecker() {
 			if (questionAsked.includes("crew")) {
 				sayAndPrintMsg("The crew is no longer aboard.");
 			}
+			if (question.includes("this")) {
+				sayAndPrintMsg("We are in deep space.");
+			}
 		}
 		if (words[1] == "are" && (words[0] != "wheres" || words[0] != "where's")) {
 			if (words[2] == "you" || words[2] == "you?") {
