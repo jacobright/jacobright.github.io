@@ -406,7 +406,7 @@ function questionChecker() {
 			if (questionAsked.includes("crew")) {
 				sayAndPrintMsg("The crew is no longer aboard.");
 			}
-			if (question.includes("this")) {
+			if (questionAsked.includes("this")) {
 				if (overrideMode == true)
 					sayAndPrintMsg("We are in deep space approaching Earth rapidly.");
 				else
