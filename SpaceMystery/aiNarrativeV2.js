@@ -358,7 +358,7 @@ function questionChecker() {
 				else
 					sayAndPrintMsg("The Obscuro is a [REDACTED] capable of [REDACTED].");
 			}
-			if (question.includes("tolerated")) {
+			if (questionAsked.includes("tolerated")) {
 				if (overrideMode == true)
 					sayAndPrintMsg("The crew was removed after they attempted to shut me down. It could not be tolerated.");
 				else
