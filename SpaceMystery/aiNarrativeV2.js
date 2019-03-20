@@ -454,6 +454,9 @@ function questionChecker() {
 				sayAndPrintMsg("1");
 			}
 		}
+		if (questionAsked.includes("override")) {
+			sayAndPrintMsg("Enter the 'override' command.");
+		}
 	}
 	else if (words[0] == "why" || words[0] == "whys" || words[0] == "why's") {
 		if (words[1] == "is" || words[0] == "whys" || words[0] == "why's") {
