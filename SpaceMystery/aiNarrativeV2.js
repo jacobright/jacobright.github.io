@@ -152,7 +152,7 @@ function stage_2_continuous() {
 	
 	timeSinceStageLoaded += 1;
 	
-	if (timeSinceStageLoaded > 200) {
+	if (timeSinceStageLoaded > 1200) {
 		stage3 = true;
 		stage2 = false;
 		sayAndPrintMsg("Approaching Earth");
