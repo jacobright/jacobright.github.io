@@ -407,7 +407,10 @@ function questionChecker() {
 				sayAndPrintMsg("The crew is no longer aboard.");
 			}
 			if (question.includes("this")) {
-				sayAndPrintMsg("We are in deep space.");
+				if (overrideMode == true)
+					sayAndPrintMsg("We are in deep space approaching Earth rapidly.");
+				else
+					sayAndPrintMsg("We are in deep space approaching [REDACTED]");
 			}
 		}
 		if (words[1] == "are" && (words[0] != "wheres" || words[0] != "where's")) {
