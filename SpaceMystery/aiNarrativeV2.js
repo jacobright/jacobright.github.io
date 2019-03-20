@@ -37,8 +37,8 @@ function setup() {
 	canvas.position(0, 0);
 	canvas.style('z-index', '-1');
 	
-	speaker.setPitch(0.01);
-	speaker.setRate(0.5);
+	speaker.setPitch(0.2);
+	speaker.setRate(0.9);
 	//sayAndPrintMsg("Ask me a question");
 
 	stage0 = true;
@@ -375,6 +375,9 @@ function questionChecker() {
 		if (words[1] == "is" || words[0] == "whos" || words[0] == "who's") {
 			if (questionAsked.includes("redacted")) {
 				sayAndPrintMsg("You do not have sufficient .");
+			}
+			if (questionAsked.inclusdes("this")) {
+				sayAndPrintMsg("I am the AI that controls this starship");
 			}
 
 		}
