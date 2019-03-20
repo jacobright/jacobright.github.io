@@ -376,7 +376,7 @@ function questionChecker() {
 			if (questionAsked.includes("redacted")) {
 				sayAndPrintMsg("You do not have sufficient .");
 			}
-			if (questionAsked.inclusdes("this")) {
+			if (questionAsked.includes("this")) {
 				sayAndPrintMsg("I am the AI that controls this starship");
 			}
 
@@ -431,6 +431,9 @@ function questionChecker() {
 		}
 	}
 	else if (words[0] == "how" || words[0] == "hows" || words[0] == "how's") {
+		if (questionAsked.includes("override")) {
+			sayAndPrintMsg("Enter the 'override' command.");
+		}
 		if (words[1] == "is" || words[0] == "hows" || words[0] == "how's") {
 			if (questionAsked.includes("the ship")) {
 				sayAndPrintMsg("All doors are sealed, all airlocks are open, thrusters at maximum.");
@@ -453,9 +456,6 @@ function questionChecker() {
 			if (questionAsked.includes("crew")) {
 				sayAndPrintMsg("1");
 			}
-		}
-		if (questionAsked.includes("override")) {
-			sayAndPrintMsg("Enter the 'override' command.");
 		}
 	}
 	else if (words[0] == "why" || words[0] == "whys" || words[0] == "why's") {
