@@ -31,8 +31,7 @@ var runStage = false;
 
 let y = 0;
 let lineSpace = 4;
-
-function setup() {
+const setup = () => {
 	canvas = createCanvas(windowWidth, windowHeight);
 	canvas.position(0, 0);
 	canvas.style('z-index', '-1');
@@ -45,7 +44,7 @@ function setup() {
 	runStage = true;
 }
 
-function draw() {
+const draw = () => {
 	if (stage0 == true && runStage == true) {
 		stage_0();
 	}
@@ -83,7 +82,7 @@ function draw() {
 	runStage = false;
 }
 
-function stage_0() {
+const stage_0 = () => {
 	//this function is to display the initial screen, to introduce you to the scene
 	background(48);
 	textVis = createElement("textVis", "You wake up in a strange hallway, doors sealed at each end.<br>You notice a terminal on the wall near you.<br><br>");
@@ -92,7 +91,7 @@ function stage_0() {
 	enterTerminal.mousePressed(start);
 }
 
-function start() {
+const start = () => {
 	enterTerminal.hide();
 	sayAndPrintMsg("Ask a question");
 	stage1 = true;
@@ -100,13 +99,13 @@ function start() {
 	stage0 = false;
 }
 
-function stage_1() {
+const stage_1 = () => {
 	//questionBox = createElement('input');
 	questionBox = createInput('');
 }
 
 //the necessary features for stage 1 that run continuously (basically just the circle)
-function stage_1_continuous() {	
+const stage_1_continuous = () => {	
 	background(48);
 	stroke(255, 16, 16);
 	fill(48);
@@ -139,13 +138,13 @@ function stage_1_continuous() {
 	pop();
 }
 
-function stage_2() {
+const stage_2 = () => {
 	//questionBox = createElement('input');
 	//questionBox = createInput('');
 }
 
 //the necessary features for stage 2 that run continuously (basically just the circle)
-function stage_2_continuous() {	
+const stage_2_continuous = () => {	
 	background(32);
 	stroke(196, 16, 16);
 	fill(32);
@@ -196,11 +195,11 @@ function stage_2_continuous() {
 
 
 
-function stage_3() {
+const stage_3 = () => {
 	//questionBox = createInput('');
 }
 
-function stage_3_continuous() {
+const stage_3_continuous = () => {
 	background(32);
 	stroke(196, 16, 16);
 	fill(32);
@@ -253,14 +252,14 @@ function stage_3_continuous() {
 	pop();
 }
 
-function stage_4() {
+const stage_4 = () => {
 	background(32);
 	textVis.html("In an attempt to save itself, the AI governing<br>the starship Obscuro destroyed the Earth<br><br>You Lose.");
 	timer.html("");
 	questionBox.hide();
 	strokeWeight = 0;
 }
-function stage_4_continuous() {
+const stage_4_continuous = () => {
 	background(32);
 	textVis.html("In an attempt to save itself, the AI governing<br>the starship Obscuro destroyed the Earth<br><br>You Lose.");
 	timer.html("");
@@ -269,14 +268,14 @@ function stage_4_continuous() {
 }
 
 
-function stage_5() {
+const stage_5 = () => {
 	background(32);
 	textVis.html("In an attempt to save itself, the AI governing<br>the starship Obscuro destroyed the Earth<br><br><br>You've Lost.");
 	timer.html("");
 	questionBox.hide();
 	strokeWeight = 0;
 }
-function stage_5_continuous() {
+const stage_5_continuous = () => {
 	background(48);
 	textVis.html("You managed to shut down the rogue AI, thus<br>stopping it from destroying the Earth.<br><br>However, you remain stranded in outer space.<br><br><br>You Win?");
 	timer.html("");
@@ -284,7 +283,7 @@ function stage_5_continuous() {
 	strokeWeight = 0;
 }
 
-function questionChecker() {
+const questionChecker = () => {
 	var questionAsked = questionBox.value().toLowerCase() + "";
 	var words = questionAsked.split(' ');
 	
@@ -537,20 +536,20 @@ function questionChecker() {
 		stage_5();
 }
 
-function sayAndPrintMsg(txt) {
+const sayAndPrintMsg = (txt) => {
 	speaker.speak(txt);
 	textVis.html(txt);
 }
 
-function startSpeaking() {
+const startSpeaking = () => {
 	isSpeaking = true;
 }
-function stopSpeaking() {
+const stopSpeaking = () => {
 	isSpeaking = false;
 	currCircleSize = 0.01;
 }
 
-function windowResized() {
+const windowResized = () => {
 	canvas = createCanvas(windowWidth, windowHeight);
 	runStage = true;
 }
