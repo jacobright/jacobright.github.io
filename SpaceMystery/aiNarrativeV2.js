@@ -1,6 +1,8 @@
 var canvas;
 var questionBox;
 var speaker = new p5.Speech('Google US English Male');
+
+
 speaker.onStart = startSpeaking;
 speaker.onEnd = stopSpeaking;
 //speaker.interrupt = true;
@@ -536,20 +538,18 @@ const questionChecker = () => {
 		stage_5();
 }
 
-const sayAndPrintMsg = (txt) => {
+function sayAndPrintMsg(txt){
 	speaker.speak(txt);
 	textVis.html(txt);
 }
 
-const startSpeaking = () => {
-	isSpeaking = true;
-}
-const stopSpeaking = () => {
+
+function stopSpeaking(){
 	isSpeaking = false;
 	currCircleSize = 0.01;
 }
 
-const windowResized = () => {
+function windowResized(){
 	canvas = createCanvas(windowWidth, windowHeight);
 	runStage = true;
 }
